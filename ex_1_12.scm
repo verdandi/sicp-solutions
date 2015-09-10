@@ -1,0 +1,6 @@
+(define (pascales-triangle n m)
+    (cond ((or (= m 1) (= m n)) 1)
+          ((or (= m 0) (= m (+ n 1))) 0)
+          (else (+ (pascales-triangle (- n 1) (- m 1)) (pascales-triangle (- n 1) m)))
+    )
+)
