@@ -1,0 +1,16 @@
+(define (rfast-sum a b)
+    (define (double x)
+        (+ x x)
+    )
+
+    (define (halve x)
+        (/ x 2)
+    )
+
+    (cond ((or (= a 0) (= b 0)) 0)
+          ((= a 1) b)
+          ((= b 1) a)
+          ((even? b) (double (rfast-sum a (halve b))))
+          (else (+ a (rfast-sum a (- b 1))))
+    )
+)
