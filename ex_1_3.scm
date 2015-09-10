@@ -1,0 +1,8 @@
+(define (first x y z)
+        (cond ((and (> x y) (> y z)) (+ (* x x) (* y y)))
+              ((and (> x z) (> z y)) (+ (* x x) (* z z)))
+              ((and (> y x) (> x z)) (+ (* x x) (* y y)))
+              ((and (> y z) (> z x)) (+ (* z z) (* y y)))
+              ((and (> z y) (> y x)) (+ (* z z) (* y y)))
+              ((and (> z x) (> x y)) (+ (* z z) (* x x))))
+)
