@@ -48,6 +48,7 @@
     (iter a 0)
 )
 
+;упражение 1.31
 (define (product term a next b)
     (if (> a b)
         1
@@ -56,6 +57,7 @@
     )
 )
 
+;упражение 1.31
 (define (iter-product term a next b)
     (define (iter a result)
         (if (> a b)
@@ -67,6 +69,7 @@
     (iter a 1)
 )
 
+;упражение 1.32
 (define (accumulate combiner null-value term a next b)
     (if (> a b)
         null-value
@@ -76,6 +79,7 @@
     )
 )
 
+;упражение 1.32
 (define (iter-accumulate combiner null-value term a next b)
     (define (iter a result)
         (if (> a b)
@@ -87,6 +91,7 @@
     (iter a null-value)
 )
 
+;упражение 1.33
 (define (filtered-accumulate combiner null-value term a next b pred)
     (define (iter a result)
         (if (> a b)
