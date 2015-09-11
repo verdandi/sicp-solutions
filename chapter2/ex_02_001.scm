@@ -1,0 +1,40 @@
+(define (make-rat num den)
+    (let ((transformed-num (cond ((and (> num 0) (< den 0)) (- num))
+                                 ((and (< num 0) (< den 0)) (- num))
+                                 (else num)))
+          (transformed-den (if (< den 0) (- den) den))
+          (g (gcd num den)))
+          (cons (/ transformed-num g) (/ transformed-den g))
+    )
+)
+
+(define (numer x) (car x))
+
+(define (denom x) (cdr x))
+
+(define (print-rat x)
+    (display (numer x))
+    (display "/")
+    (display (denom x))
+    (newline)
+)
+
+(define (add-rat x y)
+    (make-rat (+ (* (numer x) (denom y)) (* (numer y) (denom x)))
+              (* (denom x) (denom y)))
+)
+
+(define (sub-rat x y)
+    (make-rat (- (* (numer x) (denom y)) (* (numer y) (denom x)))
+              (* (denom x) (denom y)))
+)
+
+(define (mul-rat x y)
+    (make-rat (* (numer x) (numer y))
+              (* (denom x) (denom y)))
+)
+
+(define (div-rat x y)
+    (make-rat (* (numer x) (denom y))
+              (* (denom x) (numer y)))
+)
