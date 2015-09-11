@@ -14,10 +14,12 @@
     (lambda (x) (average x (f x)))
 )
 
+;Упражнение 1.42
 (define (compose f g)
     (lambda (x) (f (g x)))
 )
 
+;Упражнение 1.43
 (define (repeat f times)
     (define (iter res count)
         (if (<= count 0)
