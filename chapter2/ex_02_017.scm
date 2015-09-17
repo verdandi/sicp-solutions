@@ -1,0 +1,6 @@
+(define (last-pair1 l)
+    (if (null? l)
+        '()
+        (last-pair (cdr l))
+    )
+)
