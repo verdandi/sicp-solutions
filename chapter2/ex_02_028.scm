@@ -1,0 +1,6 @@
+(define (fringe l)
+    (cond ((null? l) '())
+          ((not (pair? l)) (cons l '()))
+          (else (append (fringe (car l)) (fringe (cdr l))))
+    )
+)
