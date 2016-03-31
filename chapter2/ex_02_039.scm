@@ -1,0 +1,15 @@
+(define (my-rev1 seq)
+    (fold-right (lambda (x y)
+                    (if (null? y)
+                        (list x)
+                        (append y (list x))
+                    )
+                )
+                '()
+                seq
+    )
+)
+
+(define (my-rev2 seq)
+    (fold-left (lambda (x y) (cons y x)) '() seq)
+)
